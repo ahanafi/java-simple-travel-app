@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7b8a0981-efda-4e9f-9b7d-0bf26b135943">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM `tbl_travel_kembali_2017102020`
+	JOIN `tbl_travel_sewa_2017102020` USING (`no_sewa`)
+    JOIN `tbl_travel_2017102020` USING (`kode_travel`);]]>
+	</queryString>
+	<field name="no_sewa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nm_penyewa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_kembali" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kode_travel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nm_travel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement uuid="fd4a2b2a-5523-449e-b15f-f4f4275bc122" mode="Opaque" x="0" y="0" width="553" height="95" backcolor="#3366FF"/>
+				<staticText>
+					<reportElement uuid="a592c668-48ad-432a-b8a5-022641e983ed" style="Title" x="0" y="0" width="370" height="66"/>
+					<textElement>
+						<font fontName="Arial" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Hanafi's Travel]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="0ac4e0c8-2365-42f8-9bcf-d37999c63944" style="SubTitle" x="169" y="66" width="384" height="29"/>
+					<textElement>
+						<font fontName="Arial" size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[The best travel agency for your holiday]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="6bee4301-2c15-45f2-8eb6-9a153795a130" mode="Opaque" x="0" y="100" width="553" height="32" forecolor="#000000" backcolor="#CCCCCC"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="dfbc7954-0557-462f-bd64-f46944830d99" x="395" y="12" width="144" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="7e9fe995-cb61-4518-8e32-5eca3da227a6" style="Column header" x="0" y="7" width="86" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. Sewa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="16a92012-e65c-4bbe-9a44-16edb65c3e9e" style="Column header" x="86" y="7" width="113" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Penyewa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c944bd4d-e3bc-41e2-b9a1-49d63dbd0e77" style="Column header" x="199" y="7" width="134" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal Pengembalian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="286de81b-cefc-41cf-9d6a-37aca6b00b05" style="Column header" x="333" y="7" width="111" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Travel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a3ecc096-7174-4adc-9190-f61a0c5d8aae" style="Column header" x="444" y="7" width="111" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Travel]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement uuid="f932b53f-8517-42f6-a182-e7bbca1c568e" style="Row" mode="Opaque" x="0" y="0" width="555" height="18"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="46eda585-0d4a-477f-93d0-44f5dbf6f0a9" style="Detail" positionType="Float" x="0" y="0" width="86" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{no_sewa}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="8343bb85-f445-455d-af09-66aead0920fd" style="Detail" positionType="Float" x="86" y="0" width="113" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nm_penyewa}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="yyyy-MM-dd">
+					<reportElement uuid="67606c11-9744-4155-b062-61a159a1a46c" style="Detail" positionType="Float" x="199" y="0" width="134" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tgl_kembali}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="4c5aee37-6601-4d40-88f5-4a6a9a9d85b8" style="Detail" positionType="Float" x="333" y="0" width="111" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{kode_travel}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="f64a50e0-cdf7-49bf-a3de-74a26d09d779" style="Detail" positionType="Float" x="444" y="0" width="111" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nm_travel}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement uuid="5970b3a9-08b7-4724-940d-6f2d31b5fb96" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="587d6172-e3ea-4b09-ba12-97cb98990168" mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="fe343de9-4112-4411-a12c-90af056b45cd" style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="c4b2c3e7-f1c6-484d-a7bf-130eee75545b" style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="c92a4a3a-e695-4419-abb5-f0afef4f3a0d" style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7b97539f-3155-46ec-bf61-13b4eb928ddc">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tbl_travel_2017102020.`kode_travel` AS tbl_travel_2017102020_kode_travel,
+     tbl_travel_2017102020.`nm_travel` AS tbl_travel_2017102020_nm_travel,
+     tbl_travel_2017102020.`keterangan` AS tbl_travel_2017102020_keterangan,
+     tbl_travel_2017102020.`harga` AS tbl_travel_2017102020_harga,
+     tbl_travel_2017102020.`jumlah_travel` AS tbl_travel_2017102020_jumlah_travel
+FROM
+     `tbl_travel_2017102020` tbl_travel_2017102020]]>
+	</queryString>
+	<field name="tbl_travel_2017102020_kode_travel" class="java.lang.String"/>
+	<field name="tbl_travel_2017102020_nm_travel" class="java.lang.String"/>
+	<field name="tbl_travel_2017102020_harga" class="java.lang.Double"/>
+	<field name="tbl_travel_2017102020_jumlah_travel" class="java.lang.Integer"/>
+	<field name="tbl_travel_2017102020_keterangan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement uuid="bf286513-ce76-4d06-9d78-42c91f0df7bd" mode="Opaque" x="0" y="0" width="553" height="95" backcolor="#3366FF"/>
+				<staticText>
+					<reportElement uuid="e301dc79-0b32-430b-a979-9db509d1f49d" style="Title" x="0" y="0" width="370" height="66"/>
+					<textElement>
+						<font fontName="Arial" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Hanafi's Travel]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="b3d41a10-78eb-4aec-933e-e4d4f516ed9c" style="SubTitle" x="2" y="66" width="404" height="29"/>
+					<textElement>
+						<font fontName="Arial" size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[The best travel agency for your holiday]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="37644dd9-a1ea-4da7-805f-eaa0e844b701" mode="Opaque" x="0" y="100" width="553" height="32" forecolor="#000000" backcolor="#CCCCCC"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="63003da7-e2c5-488e-929c-1363548b5ac6" x="307" y="12" width="246" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="423f4016-0b6f-4ed4-b6f8-b90da08184ec" style="Column header" x="0" y="7" width="89" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Travel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7baa0de0-ba5a-497b-9635-77c6fa50ef5a" style="Column header" x="89" y="7" width="133" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Travel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="171130ad-1cd9-41e8-a86f-b05d4bd8635e" style="Column header" x="222" y="7" width="111" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c1648488-d89c-46ee-91a1-80ded7f0b031" style="Column header" x="333" y="7" width="54" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0ae3bdfc-efbc-449b-9438-29c1d202e2d8" style="Column header" x="387" y="7" width="168" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Keterangan]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement uuid="4983c0a9-d06f-418f-bad6-495b67c66bf1" style="Row" mode="Opaque" x="0" y="0" width="555" height="18"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="b3a764f7-7d50-4933-bca7-ceb5406d4a12" style="Detail" positionType="Float" x="0" y="0" width="111" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbl_travel_2017102020_kode_travel}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="3ac1796d-22c9-4a99-8d35-d9d71ee3e837" style="Detail" positionType="Float" x="111" y="0" width="111" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbl_travel_2017102020_nm_travel}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="e249db71-c917-4b11-a435-a81c70b6cfda" style="Detail" positionType="Float" x="222" y="0" width="111" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbl_travel_2017102020_harga}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="9c447954-8361-4061-9a9a-0423412adc19" style="Detail" positionType="Float" x="333" y="0" width="111" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbl_travel_2017102020_jumlah_travel}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="2a1b7068-d353-4fcb-99c8-a1a8c13c63fa" style="Detail" positionType="Float" x="444" y="0" width="111" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbl_travel_2017102020_keterangan}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement uuid="271c2568-498b-4c5e-8108-d4314bd39760" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="984857d9-df71-4e64-88bb-9e45eb5a673b" mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="fe50f0d8-c29d-49a1-85f5-cdf8a44cf63a" style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="e9c3de1b-4e1e-484d-ba85-3b3089f760c9" style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="9a35d2f5-1e7e-45c5-ad06-2e486cf3d36e" style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
